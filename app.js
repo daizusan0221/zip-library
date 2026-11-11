@@ -131,6 +131,21 @@ function cover(work) {
     image.loading = "lazy";
     return image;
 }
+function downloadHref(value) {
+    const source = new URL(value);
+    if (source.origin !== "https://drive.google.com")
+        return value;
+    const fileId = /^\/file\/d\/([\w-]+)(?:\/(?:view|preview))?\/?$/.exec(source.pathname)?.[1];
+    if (!fileId)
+        return value;
+    const download = new URL("https://drive.google.com/uc");
+    download.searchParams.set("export", "download");
+    download.searchParams.set("id", fileId);
+    const resourceKey = source.searchParams.get("resourcekey") ?? source.searchParams.get("resourceKey");
+    if (resourceKey !== null)
+        download.searchParams.set("resourcekey", resourceKey);
+    return download.href;
+}
 function renderDetail(work) {
     const panel = element("article", "", "detail");
     panel.append(element("h1", work.title));
@@ -151,13 +166,15 @@ function renderDetail(work) {
     const label = element("label", "ダウンロードするバージョン");
     label.append(select);
     const download = element("a", "ZIPをダウンロード", "download");
+    download.target = "_blank";
+    download.rel = "noopener";
     const date = element("p", "", "meta");
     const changelog = element("p", "", "multiline");
     function showRelease() {
         const release = ordered[Number(select.value)];
         date.textContent = new Intl.DateTimeFormat("ja-JP", { dateStyle: "medium" }).format(new Date(release.releasedAt));
         changelog.textContent = release.changelog || "更新履歴の記載はありません。";
-        download.href = release.downloadUrl;
+        download.href = downloadHref(release.downloadUrl);
     }
     select.addEventListener("change", showRelease);
     showRelease();
