@@ -1,0 +1,74 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f8f8f3;
+  --surface: #fff;
+  --text: #212620;
+  --secondary: #49544a;
+  --muted: #59655a;
+  --line: #d6ded5;
+  --accent: #1a563d;
+  --on-accent: #fff;
+  --hover: #eff3ec;
+  font-family: "Instrument Sans", "Yu Gothic UI", Meiryo, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171b17;
+    --surface: #212721;
+    --text: #edf1eb;
+    --secondary: #c1cbbf;
+    --muted: #a9b6aa;
+    --line: #39453b;
+    --accent: #a4dbb6;
+    --on-accent: #17291e;
+    --hover: #272f28;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.65; }
+[hidden] { display: none !important; }
+.wrap { width: min(100% - 48px, 960px); margin-inline: auto; }
+.mast { border-bottom: 1px solid var(--line); }
+.bar { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { color: var(--text); font-weight: 600; text-decoration: none; }
+button, input, select { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; min-width: 0; }
+button { cursor: pointer; }
+button:hover, .category-link:hover, .work-row:hover { background: var(--hover); }
+button:disabled { cursor: wait; }
+a { color: var(--accent); text-underline-offset: 4px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+#breadcrumbs { padding-block: 24px 8px; color: var(--muted); font-size: .875rem; }
+#breadcrumbs:empty { display: none; }
+#breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 4px 8px; list-style: none; margin: 0; padding: 0; }
+#breadcrumbs li { overflow-wrap: anywhere; }
+#breadcrumbs li + li::before { content: "/"; margin-inline-end: 8px; color: var(--muted); }
+h1, h2, h3, p { margin: 0; overflow-wrap: anywhere; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 500; line-height: 1.25; margin-block: 12px 20px; }
+h2 { font-size: 1.125rem; font-weight: 600; }
+#browse { padding-top: 8px; }
+#branches:empty { display: none; }
+#branches h2 { margin-bottom: 8px; }
+.category-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 8px; list-style: none; margin: 0 0 24px; padding: 0; }
+.category-link { display: flex; justify-content: space-between; align-items: center; gap: 12px; height: 100%; min-height: 48px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); text-decoration: none; overflow-wrap: anywhere; }
+.search { display: grid; gap: 4px; max-width: 416px; color: var(--secondary); }
+#status { margin-block: 16px 8px; color: var(--muted); font-size: .875rem; font-variant-numeric: tabular-nums; }
+#status:empty { display: none; }
+#results { padding-bottom: 48px; }
+.work-list { border-block-start: 1px solid var(--line); }
+.work-row { display: flex; gap: 16px; align-items: start; padding: 16px 8px; border-bottom: 1px solid var(--line); }
+.work-row .cover { width: min(25%, 112px); aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+.work-body { flex: 1; min-width: 0; }
+.work-row h2 a { color: var(--text); }
+.work-row h2 a:hover { color: var(--accent); }
+.meta { color: var(--muted); font-size: .875rem; font-variant-numeric: tabular-nums; }
+.work-summary { color: var(--secondary); white-space: pre-line; }
+.detail { max-width: 736px; }
+.detail .cover { display: block; max-width: 100%; max-height: 384px; object-fit: contain; border-radius: 8px; margin-bottom: 16px; }
+.multiline { white-space: pre-wrap; }
+.release { display: grid; justify-items: start; gap: 12px; border-top: 1px solid var(--line); padding-top: 16px; margin-top: 24px; }
+.release label { display: grid; gap: 4px; max-width: 100%; }
+.download { display: inline-block; background: var(--accent); color: var(--on-accent); padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+@media (max-width: 520px) {
+  .wrap { width: calc(100% - 32px); }
+  .work-row { gap: 12px; padding-inline: 0; }
+}

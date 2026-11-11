@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="自作スキン、Minecraftアドオン、開発ツールの配布サイト">
+<title>ZIP Library</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<header class="mast"><div class="wrap bar"><a class="brand" href="./">ZIP Library</a><button id="refresh" type="button">更新を確認</button></div></header>
+<main class="wrap">
+<nav id="breadcrumbs" aria-label="パンくず"></nav>
+<section id="browse">
+<h1 id="page-title">配布目録</h1>
+<div id="branches"></div>
+<label class="search">作品を検索<input id="search" type="search" placeholder="タイトル・説明・カテゴリ"></label>
+</section>
+<p id="status" role="status" aria-live="polite"></p>
+<div id="results"></div>
+</main>
+</body>
+</html>
