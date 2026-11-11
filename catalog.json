@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-11T15:18:47.0344011+00:00",
+  "updatedAt": "2026-11-11T15:20:44.5074199+00:00",
   "works": [
     {
       "id": "a7cf2815-c184-43b7-a838-39214f57bb13",
@@ -94,44 +94,25 @@
           "releaseId": "0590a20e-afcd-47be-8764-72ba89e8b545"
         }
       ],
-      "categoryId": null,
+      "categoryId": "897bc3c4de0543baae37e25a02d60314",
       "imagePath": null
-    },
-    {
-      "id": "f54c64f6-2cac-4b01-9ced-1edc6548610c",
-      "title": "test",
-      "description": "a",
-      "releases": [
-        {
-          "version": "1",
-          "changelog": "\u3046\u304A",
-          "releasedAt": "2026-11-11T14:53:58.4065858+00:00",
-          "downloadUrl": "https://drive.google.com/file/d/1QxewP3aDzN74A1raXITej-3M9C2i_M5H/view?usp=drivesdk",
-          "storageId": "31f7676a-977f-486f-ae26-829402185587",
-          "provider": "google-drive",
-          "remoteFileId": "1QxewP3aDzN74A1raXITej-3M9C2i_M5H",
-          "releaseId": "1a32cebc-ecfe-4208-b812-fb30905a5560"
-        }
-      ],
-      "categoryId": "cb0c9f31a18648e4af5b5787763d6b01",
-      "imagePath": "images/9a218537984a1496fcdcee44a444e0956cfa4b115033ee2551bbf8f0e27e2eb9.jpg"
     }
   ],
   "categories": [
     {
+      "id": "494529cef8f341af99d89d4d2268f6c0",
+      "name": "TaikoNauts\u95A2\u9023",
+      "parentId": null
+    },
+    {
       "id": "465fdd1aebcd41e4bd684d368dc74a34",
       "name": "\u30DE\u30A4\u3069\u3093",
-      "parentId": null
+      "parentId": "494529cef8f341af99d89d4d2268f6c0"
     },
     {
-      "id": "bf3c94f1dafd4872bebd328b7a4e2eb8",
-      "name": "test",
-      "parentId": null
-    },
-    {
-      "id": "cb0c9f31a18648e4af5b5787763d6b01",
-      "name": "a",
-      "parentId": "bf3c94f1dafd4872bebd328b7a4e2eb8"
+      "id": "897bc3c4de0543baae37e25a02d60314",
+      "name": "SimpleNijiiro",
+      "parentId": "494529cef8f341af99d89d4d2268f6c0"
     }
   ]
 }
